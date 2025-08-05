@@ -64,3 +64,9 @@ flutter:
     - assets/
     - assets/images/
     - assets/icon/
+    - assets/data/hotels.json
+
+  fonts:
+    - family: sahel
+      fonts:
+        - asset: assets/font/sahel.ttf
