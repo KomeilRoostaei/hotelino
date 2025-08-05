@@ -1,7 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:hotelino/core/theme/Theme_Provider.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MyApp());
+  final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => ThemeProvider(
+            WidgetsBinding.instance.platformDispatcher.platformBrightness,
+          ),
+        ),
+      ],
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
